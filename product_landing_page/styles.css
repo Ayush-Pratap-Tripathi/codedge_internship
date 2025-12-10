@@ -1,0 +1,72 @@
+Additional polished visuals beyond Tailwind utility classes
+        :root {
+            --accent: linear-gradient(90deg, #7c3aed, #06b6d4);
+            --glass: rgba(255, 255, 255, 0.06);
+        }
+
+        /* Header backdrop blur */
+        .glass-header {
+            backdrop-filter: blur(6px);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+        }
+
+        /* subtle floating animation for hero image */
+        @keyframes floaty {
+            0% {
+                transform: translateY(0px)
+            }
+
+            50% {
+                transform: translateY(-12px)
+            }
+
+            100% {
+                transform: translateY(0px)
+            }
+        }
+
+        .floaty {
+            animation: floaty 6s ease-in-out infinite;
+        }
+
+        /* card shine */
+        .card-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-shine::after {
+            content: '';
+            position: absolute;
+            left: -60%;
+            top: 0;
+            width: 40%;
+            height: 100%;
+            transform: skewX(-20deg);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+            transition: all .9s ease;
+        }
+
+        .card-shine:hover::after {
+            left: 120%;
+        }
+
+        /* glass button */
+        n .btn-accent {
+            background: linear-gradient(90deg, #7c3aed, #06b6d4);
+            box-shadow: 0 10px 30px rgba(102, 51, 153, 0.15);
+        }
+
+        /* responsive carousel dots */
+        .pricing-badge {
+            background: linear-gradient(90deg, #06b6d4, #7c3aed);
+            color: white;
+            font-weight: 700;
+        }
+
+        /* small screen improvements */
+        @media (max-width:640px) {
+            .desktop-only {
+                display: none
+            }
+        }
